@@ -1,0 +1,44 @@
+﻿@page
+@model WebApplication1.Pages.SignUpModel
+
+<div class="container-fluid vh-100"
+     style="background-image: url('@Url.Content("~/img4.jpg")'); background-size: cover; background-position: center;">
+
+
+    <h2 class="text-center">Sign Up</h2>
+    <div class="row justify-content-center ">
+        <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="newuser.Name"></label>
+                    <input asp-for="newuser.Name" class="form-control" />
+                    <span asp-validation-for="newuser.Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="newuser.Email"></label>
+                    <input asp-for="newuser.Email" class="form-control" />
+                    <span asp-validation-for="newuser.Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="newuser.Password"></label>
+                    <input asp-for="newuser.Password" type="password" class="form-control" />
+                    <span asp-validation-for="newuser.Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="newuser.ConfirmPassword"></label>
+                    <input asp-for="newuser.ConfirmPassword" type="password" class="form-control" />
+                    <span asp-validation-for="newuser.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="newuser.ImageFile" class="form-label">Upload Image</label>
+                    <input asp-for="newuser.ImageFile" type="file" class="form-control" />
+                    <span asp-validation-for="newuser.ImageFile" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mt-3">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>

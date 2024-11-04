@@ -1,0 +1,28 @@
+﻿@page
+@model ProductDashboardModel
+@{
+}
+<h2 class="text-center">Product Dashboard</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var product in Model.ProductList)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="@product.ImagePath" class="card-img-top" alt="@product.Name" height="300" />
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text">Price: @product.Price</p>
+                        <p class="card-text">Quantity: @product.Quantity</p>
+                        <p class="card-text">@product.Description</p>
+                        <form method="post" asp-page-handler="Delete">
+                            <input type="hidden" name="id" value="@product.Id" />
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

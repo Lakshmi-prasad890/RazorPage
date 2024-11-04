@@ -1,0 +1,51 @@
+﻿@page
+@model WebApplication1.Pages.LoginModel
+@{
+}
+<h2 class="text-center">Login</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+<form method="post">
+    @* <div class="form-group">
+        <label asp-for="newuser.Name"></label>
+        <input asp-for="newuser.Name" class="form-control" />
+        <span asp-validation-for="newuser.Name" class="text-danger"></span>
+    </div> *@
+
+    <div class="form-group">
+        <label asp-for="newuser.Email"></label>
+        <input asp-for="newuser.Email" class="form-control" />
+        <span asp-validation-for="newuser.Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+                    <label asp-for="newuser.Password"></label>
+                    <input asp-for="newuser.Password" type="password" class="form-control" />
+                    <span asp-validation-for="newuser.Password" class="text-danger"></span>
+                </div>
+               @*  <div>
+                    <select asp-for="CourseList"
+                    asp-items="Model.CourseOptions" class="form-control mt-3">
+                    <option>Select Course</option>
+                </select>
+                </div> *@
+
+    <button type="submit"  asp-page-handler="Send" >send</button>
+    
+</form>
+            
+        </div>
+</div>
+</div>
+
+    <script>
+        
+        @if (TempData["error"] != null)
+        {
+            <text>
+                    alert('@TempData["error"]');
+            </text>
+        }
+    </script>
+

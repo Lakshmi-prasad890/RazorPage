@@ -1,0 +1,37 @@
+﻿@page
+@model WebApplication1.Pages.AdminModel
+@{
+}
+<h2 class="text-center">Admin Login</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="newuser.Email"></label>
+                    <input asp-for="newuser.Email" class="form-control" />
+                    <span asp-validation-for="newuser.Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="newuser.Password"></label>
+                    <input asp-for="newuser.Password" type="password" class="form-control" />
+                    <span asp-validation-for="newuser.Password" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+
+               
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+
+    @if (TempData["error"] != null)
+    {
+        <text>
+                    alert('@TempData["error"]');
+        </text>
+    }
+</script>

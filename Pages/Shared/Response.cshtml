@@ -1,0 +1,19 @@
+﻿@{
+    var message = TempData["message"] as string;
+    var linkText = TempData["LinkText"] as string;
+    var linkPage = TempData["LinkPage"] as string;
+}
+
+<div class="container text-center mt-5">
+    @if (TempData["message"]!=null)
+    {
+        <div class="alert alert-info">
+            <h2>@message</h2>
+        </div>
+    }
+
+    @if (TempData["linkText"]!=null && TempData["linkPage"]!=null)
+    {
+        <a class="btn btn-primary mt-3" asp-page="@linkPage">@linkText</a>
+    }
+</div>
